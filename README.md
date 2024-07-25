@@ -6,9 +6,10 @@
 
 FindMyBMW is a toy project initiated by the 2023-2 IT interns of BMW Group Korea (feat. 2023-2 Marketing Intern Lee Jiyeon & 2023-2 Homologation Intern Park Hanyi) and is aimed at recommending BMW models to potential customers baased on their taste & lifestyle.
 
+# Update!!! (24.7.25)
 ----------------------------
 Version 2.0 (24.7.25)
-- Backend framework changes from Flask to Spring Boot
+- Backend framework changed from Flask to Spring Boot
 - Utilizes Microservice Architecture
 - Added an Admin Page
 - Added MySQL Database
@@ -119,9 +120,11 @@ NOTE: Removed vehicle information data. Data is not provided.
 
 ### Release 
 
-| Version  |       Key features                  | OS required                        |
-| -------- | ------------------------------------| -----------------------------------|
-|  v.1.0.0 | Fully functional FindMyBMW Prototype | Chrome browser/Microsoft Edge |
+| Version  |       Key features                            | OS required                   |
+| -------- | ----------------------------------------------| ------------------------------|
+|  v.1.0.0 | Fully functional FindMyBMW Prototype          | Chrome browser/Microsoft Edge |
+|  v.2.0.0 | Migration from Flask to Spring Boot Framework | Chrome browser/Microsoft Edge |
+
 
 
 ## Works
