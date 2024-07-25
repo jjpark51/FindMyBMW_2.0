@@ -104,18 +104,19 @@ There are a total of 4 fetch URLs that must be editted in order for the frontend
 NOTE: Removed vehicle information data. Data is not provided.
 
 ## Example
-
-1. Main Page
+1. Login Page
+![image](img/login.png)
+2. Main Page
 ![image](img/main.png)
-2. Price Page
+3. Price Page
 ![image](img/price.png)
-3. Questions Page
+4. Questions Page
 ![image](img/question.png)
-4. Results Page
+5. Results Page
 ![image](img/result.png)
-5. Detail Page
+6. Detail Page
 ![image](img/detail.png)
-6. Reset Price Page
+7. Reset Price Page
 ![image](img/reset.png)
 
 ### Release 
