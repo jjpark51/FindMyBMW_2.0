@@ -12,6 +12,7 @@ Version 2.0 (24.7.25)
 - Utilizes Microservice Architecture
 - Added an Admin Page
 - Added MySQL Database
+- Added Login/Signup Page
 -----------------------------
 Slides: https://docs.google.com/presentation/d/1-hYpgo-pytc_sFC-tg3R9Yfoq5CWJVt3/edit?usp=sharing&ouid=116131205847752120819&rtpof=true&sd=true
 <br>
