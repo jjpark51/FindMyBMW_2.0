@@ -1,0 +1,132 @@
+@import url(https://db.onlinewebfonts.com/c/ac95f91c55cc591ecf37a4d136ff8031?family=BMWTypeNext+Pro+Regular);
+
+
+.navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(0deg, #0000, #0006);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;  // This ensures the navbar stays on top
+
+  a {
+    font-size: 1rem;
+    font-family: "BMWTypeNext Pro Regular", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    line-height: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .leftside {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 30px;
+    padding-top: 10px;
+
+    > * {
+      margin-right: 20px;
+    }
+
+    .bmw-icon, .mini-icon {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    .bmw-icon {
+      width: 52px;
+      height: 52px;
+      background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/bmw_white.svg);
+    }
+
+    .mini-icon {
+      width: 76px;
+      height: 72px;
+      background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/mini-white-logo.svg);
+    }
+
+    div {
+      margin-left: 40px;
+
+      &:hover {
+        border-bottom: 3px solid #1C69D4;
+        
+      }
+    }
+  }
+
+  .rightside {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .leftside {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      > * {
+        margin-right: 0;
+      }
+
+      div {
+        display: none;  // Hide nav items on mobile
+      }
+    }
+
+    .rightside {
+      width: 100%;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        flex-direction: column;
+        padding-top: 20px;
+        height: auto;
+        .leftside {
+            flex: 100%;
+            text-align: center;
+            padding-left: 5px;
+
+            .bmw-icon {
+                margin: 0;
+                position: absolute;
+                left: 10px;
+                top:10px;
+                width: 90px;
+                height: 40px;
+            }
+            .mini-icon {
+                margin: 0;
+                position: absolute;
+                left: 80px;
+                top: 12px;
+                width: 90px;
+                height:35px;
+            }
+        }
+        .bmw-conf-li,
+        .bmw-drive-li,
+        .mini-conf-li {
+            display: none;
+        }
+    }
+
+}
