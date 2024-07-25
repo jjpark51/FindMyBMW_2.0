@@ -119,9 +119,11 @@ NOTE: Removed vehicle information data. Data is not provided.
 
 ### Release 
 
-| Version  |       Key features                  | OS required                        |
-| -------- | ------------------------------------| -----------------------------------|
-|  v.1.0.0 | Fully functional FindMyBMW Prototype | Chrome browser/Microsoft Edge |
+| Version  |       Key features                            | OS required                   |
+| -------- | ----------------------------------------------| ------------------------------|
+|  v.1.0.0 | Fully functional FindMyBMW Prototype          | Chrome browser/Microsoft Edge |
+|  v.2.0.0 | Migration from Flask to Spring Boot Framework | Chrome browser/Microsoft Edge |
+
 
 
 ## Works
