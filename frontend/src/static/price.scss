@@ -1,0 +1,84 @@
+.price-body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.7;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .line-divide {
+        border-top: 2px solid black;
+        margin: 20px auto;
+        width: 93%;
+        color: #666;
+    }
+
+    .bmw-logo {
+        width: 192px;
+        height: 184px;
+        background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    .price-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+
+            li {
+                margin: 0 10px;
+                cursor: default;
+
+                &:hover {
+                    font-weight: bold;
+                    transition: font-weight 100ms;
+                }
+            }
+        }
+    }
+
+    .wrapper {
+        width: 1100px;
+        height: 450px;
+        background-color: transparent;
+        margin: 20px auto;
+        border-radius: 8px;
+        position: relative;
+
+        .black-box-left,
+        .black-box-right {
+            position: absolute;
+            top: 30px;
+            height: 345px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .black-box-left {
+            left: 40px;
+        }
+
+        .black-box-right {
+            right: 40px;
+        }
+    }
+}

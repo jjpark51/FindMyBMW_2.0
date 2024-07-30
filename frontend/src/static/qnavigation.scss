@@ -1,0 +1,230 @@
+@import url(https://db.onlinewebfonts.com/c/ac95f91c55cc591ecf37a4d136ff8031?family=BMWTypeNext+Pro+Regular);
+
+
+.qnavbar {
+    padding-top:30px;
+    width: 100%;
+    height:50px;
+    margin: auto;
+    background-color:transparent;
+    display:flex;
+    flex-direction: row;
+    padding-bottom: 16px;
+
+
+    a {
+        font-size: 1rem;
+        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+        font-weight: 700;
+        line-height: 1.5rem;
+        height:100%;
+    }
+
+    .leftside {
+        flex: 90%;
+        height:100%;
+        display: flex;
+        align-items: center;
+        padding-left: 100px;
+        .qbmw-icon {
+            width:52px;
+            height:52px;
+            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/bmw-logo-gray.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            cursor: pointer;
+            margin-bottom:18px;
+        }
+        .qmini-icon {
+            width:96px;
+            height:72px;
+            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/mini-logo.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin-left: 10px;
+            margin-bottom:18px;
+
+        }
+       
+
+    }
+    .bmw-conf-li {
+        height: 100%;
+        font-size: 1rem;
+        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+        font-weight: 700;
+        line-height: 1.5rem;
+        height:100%;
+        // margin-left: 1250px;
+        // margin-right:20px;
+        position: relative;
+        left: 70%;
+        padding-top:23px;
+        text-decoration: none;
+
+    }
+    .bmw-drive-li {
+        position: relative;
+        height: 100%;
+        font-size: 1rem;
+        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+        font-weight: 700;
+        line-height: 1.5rem;
+        height:100%;
+        // margin-left: 20px;
+        // margin-right:20px;
+        left: 74%;
+        padding-top:23px;
+        width: fit-content;
+
+
+    }
+    .mini-conf-li {
+        height: 100%;
+        font-size: 1rem;
+        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+        font-weight: 700;
+        line-height: 1.5rem;
+        height:100%;
+        // margin-left: 20px;
+        // margin-right:20px;
+        width: fit-content;
+        position: relative;
+        left: 72%;
+        padding-top:23px;
+
+
+
+    }
+    
+    .bmw-conf-li:hover{
+        border-bottom: 3px solid #1C69D4;
+    }
+    .mini-conf-li:hover{
+        border-bottom: 3px solid #1C69D4;
+    }
+    .all-price-li:hover{
+        border-bottom: 3px solid #1C69D4;
+    }
+
+}
+
+@media (max-width: 760px) {
+
+    .qnavbar {
+        padding-top:30px;
+        width: 100%;
+        height:50px;
+        margin: auto;
+        background-color:transparent;
+        display:flex;
+        flex-direction: row;
+        padding-bottom: 16px;
+    
+    
+        a {
+            font-size: 1rem;
+            font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+            font-weight: 700;
+            line-height: 1.5rem;
+            height:100%;
+        }
+    
+        .leftside {
+            flex: 90%;
+            height:100%;
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+            .qbmw-icon {
+                width:52px;
+                height:52px;
+                background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/bmw-logo-gray.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                cursor: pointer;
+                margin-bottom:18px;
+                margin-left: 10px;
+            }
+            .qmini-icon {
+                width:96px;
+                height:72px;
+                background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/mini-logo.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                margin-left: 10px;
+                margin-bottom:18px;
+    
+            }
+           
+    
+        }
+        .bmw-conf-li {
+            height: 100%;
+            font-size: 1rem;
+            font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+            font-weight: 700;
+            line-height: 1.5rem;
+            height:100%;
+            // margin-left: 1250px;
+            // margin-right:20px;
+            position: relative;
+            left: 70%;
+            padding-top:23px;
+            text-decoration: none;
+            display: none;
+
+        }
+        .bmw-drive-li {
+            position: relative;
+            height: 100%;
+            font-size: 1rem;
+            font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+            font-weight: 700;
+            line-height: 1.5rem;
+            height:100%;
+            // margin-left: 20px;
+            // margin-right:20px;
+            left: 74%;
+            padding-top:23px;
+            width: fit-content;
+            display: none;
+
+    
+        }
+        .mini-conf-li {
+            height: 100%;
+            font-size: 1rem;
+            font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+            font-weight: 700;
+            line-height: 1.5rem;
+            height:100%;
+            // margin-left: 20px;
+            // margin-right:20px;
+            width: fit-content;
+            position: relative;
+            left: 72%;
+            padding-top:23px;
+            display: none;
+    
+    
+    
+        }
+        
+        .bmw-conf-li:hover{
+            border-bottom: 3px solid #1C69D4;
+        }
+        .mini-conf-li:hover{
+            border-bottom: 3px solid #1C69D4;
+        }
+        .all-price-li:hover{
+            border-bottom: 3px solid #1C69D4;
+        }
+    
+    }
+
+}

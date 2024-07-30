@@ -1,0 +1,105 @@
+@import url(https://db.onlinewebfonts.com/c/ac95f91c55cc591ecf37a4d136ff8031?family=BMWTypeNext+Pro+Regular);
+
+.main-background {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    // padding-top: 4%;
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 50pt;
+        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+        width: fit-content;
+    }
+    
+    a {
+        font-family:"BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+    }
+
+    .line-divide {
+        width: 93%;
+        border-top: 1px solid whitesmoke;
+        margin: 20px auto 0;
+        margin-top: 5%;
+    }
+
+    .sheer-drive {
+        font-family: "BMWTypeNext Pro Regular", Arial, Helvetica, Robot,sans-serif;
+        font-size: 1pc;
+        font-weight: 300;
+        line-height: 1.5rem;
+        color: whitesmoke;
+        width: fit-content;
+        margin: 20px 0 0 5%;
+        cursor: default;
+    }
+
+    .content-wrapper {
+        position: absolute;
+        bottom: 30px; // Adjust this value to control distance from bottom
+        left: 4%; // Adjust this value to control distance from left
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; // This will push content to the bottom
+        gap: 20px; // This creates space between the elements
+    }
+
+    .small-title {
+        color: whitesmoke;
+        font-size: 12pt;
+        width: fit-content;
+        cursor: default;
+        a {
+            font-size: 18pt;
+            font-weight: 300;
+            line-height: 2rem;
+        }
+    }
+
+    .big-title {
+        color: whitesmoke;
+        font-size: 30pt;
+        width: fit-content;
+        cursor: default;
+    }
+
+    .start-button {
+        color: whitesmoke;
+        font-size: 20pt;
+        border: 2px solid whitesmoke;
+        width: 180px;
+        text-align: center;
+        height: 50px;
+        cursor: pointer;
+        transition: 400ms;
+
+        .start-font {
+            margin: auto;
+            position: relative;
+            top: 5%;
+        }
+
+        &:hover {
+            color: black;
+            background-color: whitesmoke;
+            transition: 400ms;
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    .main-background {
+        .content-wrapper {
+            padding: 10% 4%;
+        }
+    }
+}

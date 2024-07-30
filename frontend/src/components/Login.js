@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../static/login.scss'
 import Navigation from './Navigation'
 import api from '../API/api'
@@ -9,6 +10,7 @@ function Login() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -28,6 +30,7 @@ function Login() {
           const response = await api.post('/auth/login', { email, password });
           console.log('Login successful', response.data);
           localStorage.setItem('token', response.data.token);
+          navigate('/main')
           // Handle successful login (e.g., redirect to dashboard)
         } catch (error) {
           console.error('Login error', error.response.data);

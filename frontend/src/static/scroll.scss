@@ -1,0 +1,264 @@
+.scroll-body {
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)),
+            url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/scroll.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 30%;
+    background-attachment: fixed;
+
+    .scroll-indicator {
+        // margin: auto;
+        position: absolute;
+        bottom :3%;
+        width: 15px;
+        border: 0.1rem solid white;
+        height: 30px;
+        border-radius: 8px;
+        opacity: 0.8;
+        transition: opacity 0.5s; /* Add a transition for gradual fading */
+        
+
+
+        a {
+            position: relative;
+            top: 25px;
+            right:10px;
+            color: white;
+            opacity: 0.99;
+            
+        }
+        .elementor-button-text {
+            margin: auto;
+            position: relative;
+            top: 3px;
+            width: 3px;
+            min-height: 8px;
+            display: block;
+            background: currentColor;
+            border-radius: 5px;
+            -webkit-animation: 2.0s ease infinite wheel-up-down;
+            animation: 2.0s ease infinite wheel-up-down;
+            color:whitesmoke;
+            
+        }
+        selector .elementor-button-icon{
+            display: none;
+        }
+        selector a:focus{
+            outline: none;
+        }
+        @-webkit-keyframes wheel-up-down {
+          0% {
+            opacity: 0;
+          }
+          30% {
+            opacity: 1;
+          }
+          100% {
+            -webkit-transform: translateY(18px);
+                    transform: translateY(18px);
+            opacity: 0;
+          }
+        }
+        @keyframes wheel-up-down {
+          0% {
+            opacity: 0;
+          }
+          30% {
+            opacity: 1;
+          }
+          100% {
+            -webkit-transform: translateY(18px);
+                    transform: translateY(18px);
+            opacity: 0;
+          }
+        }
+    }
+    .scroll-indicator:hover {
+        cursor: pointer;
+    }
+
+    .scroll-next-text {
+        text-align: center;
+        font-size: 16pt;
+        color: white;
+        opacity: 0.7;
+
+    }
+    .scroll-next-text:hover{ 
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .question-progress {
+        height: 10vh;
+        width: 100%;
+        background-color: transparent;
+        opacity:1;
+        .progress-bar-1 {
+            position: relative;
+            top: 40px;
+            height: 54px;
+            width: 100%;
+            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/Question_bar.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: auto;
+        }
+    }
+    .scroll-card-wrapper {
+        margin: auto;
+        margin-top: 8%;
+        position: relative;
+        bottom: 50px;
+        width: 60%;
+        background-color: #D9D9D9;
+        opacity: 0.9;
+        height: 55vh;
+        border: 1px solid whitesmoke;
+        border-radius: 8px;
+        .question-progress-indicator {
+            height:15px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position:relative;
+            top: 30px;
+
+        }
+        .question-num {
+            text-align: center;
+            font-size: 38pt;
+            font-weight: bold;
+            position: relative;
+            top:50px;
+        }
+        .question-script {
+            position: relative;
+            top: 70px;
+            text-align: center;
+            font-size: 22pt;
+
+        }
+        .question-option {
+            position: relative;
+            top: 90px;
+            font-size: 12pt;
+            color: black;
+            text-align: center;
+        }
+        .drag-box-wrapper {
+            display: flex;
+            width: 1100px;
+            height: 100px;
+            background-color: blue;
+            margin: auto;
+            position: relative;
+            top: 90px;
+        }
+        .answer-flex {
+            position: relative;
+            top: 50px;
+            display: flex;
+            flex: 1 0 21%;
+            justify-content:space-evenly;
+            flex-wrap:wrap;
+            margin: auto;
+            width:1100px;
+            row-gap: 30px;
+            
+
+           .question-answer {
+               position: relative;
+               top: 100px;
+               width:235px;
+               height: 70px;
+               border: 2px solid black;
+               border-radius: 30px;
+               opacity: 0.8;
+               a{
+                opacity: 1;
+                font-size: 13pt;
+                font-weight: bolder;
+               }
+               
+           }
+           
+        
+           .question-answer:hover {
+                border: 2px solid #1C69D4;
+                cursor:pointer;
+           }
+           .question-answer-neutral {
+                position: relative;
+                top: 100px;
+                width:105px;
+                height: 50px;
+                border: 1px solid gray;
+                border-radius: 8px;
+                color: gray;
+                background-color: #FFFFFF;
+           }
+           .question-answer-neutral:hover {
+                border: 2px solid gray;
+                cursor: pointer;
+                font-weight: bold;
+           }
+    }
+}
+
+.page-buttons-wrapper{
+    width: 70%;
+    height: 10vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .prev-button {
+        height: 6vh;
+        width: 200px;
+        opacity: 0.7;
+        color: whitesmoke;
+        font-size: 20pt;
+        border: 2px solid whitesmoke;
+        text-align: center;
+        cursor: pointer;
+        background-color: transparent;
+
+    }
+    .prev-button:hover{
+        transition: 400ms;
+        background-color: whitesmoke;
+        color:black;
+
+    }
+    .next-button {
+        height: 6vh;
+        width: 200px;
+        opacity: 0.7;
+        color: whitesmoke;
+        font-size: 20pt;
+        border: 2px solid whitesmoke;
+        text-align: center;
+        cursor: pointer;
+        background-color: transparent;
+
+    }
+    .next-button:hover{
+        transition: 400ms;
+        background-color: whitesmoke;
+        color:black;
+
+    }
+
+}
+
+}

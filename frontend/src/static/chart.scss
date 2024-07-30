@@ -1,0 +1,33 @@
+
+
+.price-app {
+    position:relative;
+    bottom: 60px;
+    right: 60px;
+    padding-bottom:80px;
+    left:20px;
+}
+
+@media (max-width: 760px) {
+    .price-app {
+        width:300px;
+        position: absolute;
+        left: -15%;
+        bottom: 30%;
+    }
+
+}
+
+.radar-app{
+    width:100%;
+    position: relative;
+    bottom: 40px;
+
+}
+
+.pop-radar-app{
+    width:100%;
+    position: relative;
+    bottom: 20px;
+
+}
