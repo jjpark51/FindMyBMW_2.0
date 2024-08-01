@@ -63,46 +63,6 @@ $ pip install -r requirements.txt
 $ python server.py
 ```
 
-4. Fix the fetch API in frontend (for local use)
-There are a total of 4 fetch URLs that must be editted in order for the frontend and backend to communicate with each other
-
-```
-├── frontend
-        |__ public
-        |__ src
-              |__ assets
-              |__ components
-                  ├── ScrollFirst.js
-                  ├── Result.js
-                  ├── Price.js
-
-```
-
-(1) ScrollFirst.js, 1 change, edit so the following code looks like this
-```
-        fetch('http://localhost:5000/api/test', requestOptions)
-        // fetch('/api/test', requestOptions)
-```
-
-(2) Result.js, 2 change, edit so the following code looks like this
-```
-         fetch('http://localhost:5000/api/reset', requestOptions)
-         // fetch('/api/reset', requestOptions)
-```
-```
-        fetch('http://localhost:5000/api/data')
-        // fetch('/api/data')
-```
-
-(3) Price.js, 1 change, edit so the following code looks like this
-```
-    fetch('http://localhost:5000/api/price', requestOptions)
-    // fetch('/api/price')
-   
-```
-
-NOTE: Removed vehicle information data. Data is not provided.
-
 ## Example
 1. Login Page
 ![image](img/login.png)
