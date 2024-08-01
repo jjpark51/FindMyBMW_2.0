@@ -8,10 +8,11 @@ import ScrollCard from './ScrollCard'
 import { Link } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
 import DragCard from './DragCard'
+import api from '../API/api'
 
 function Question() {
 
-    const ResponseList =  [[0,0,0,0,0],[0,0,0,0,0], [0,0,0,0],[0,0,0,0,0],[0,0,0,0],[0,0,0,0,0,0,0]]
+    const ResponseList =  [[0,0,0,0,0],[0,0,0,0], [0,0,0,0],[0,0,0,0,0],[0,0,0,0],[0,0,0,0,0,0,0]]
     const [recommendData, setRecommendData] = useState([])
     const initIndicator = QList[0].indicator;
     const initNum = QList[0].num;
@@ -61,38 +62,29 @@ function Question() {
                 ResponseList[qNum - 1][data - 1] = 1;
             }
         }
+             console.log(ResponseList)
     }
-    const handleResult = () => {
-
-        const requestOptions = {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json',
-            'Accept': "application/json"
-        },
-            body: JSON.stringify(ResponseList)
-          };
-        // console.log(ResponseList)
-        // window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-        fetch('http://localhost:8080/api/test', requestOptions)
-        // fetch('/api/test', requestOptions)
-        .then(response => response.json())
-        .then(data => {
-            // console.log(ResponseList)
-            setRecommendData(data)
-            // console.log(data);
-            // window.location.reload();
-
-        })
-        .catch(err => console.log(err))
-       
-
-    }
+    const handleResult = async (e) => {
+        e.preventDefault();
+        try {
+            console.log(ResponseList)
+          const token = localStorage.getItem('token');
+          console.log('Token being used:', token);
+          const response = await api.post('/process', ResponseList);
+          console.log("Request was sent successfully", response.data);
+        } catch (error) {
+          console.log("Request failed!", error.response?.data || error.message);
+          console.log("Full error object:", error);
+        }
+      };
     const res = QList.slice(1,7).map(e => e);
 
   return (
     <>
       <QNavigation />
       <div className='scroll-body'>
+      <Fade duration={2000}>
+
         <DndProvider backend={HTML5Backend}>
                                 <DragCard 
                             indicator={initIndicator}
@@ -104,10 +96,13 @@ function Question() {
                             Qnum={1}
                             />
                 </DndProvider>
+        </Fade>
+                <Fade duration={2000}>
         <div className='scroll-indicator' onClick={scrollDown}>
             <div className='elementor-button-text'></div>
                 <a>Scroll</a>
         </div>
+        </Fade>
 
         {
                 res.map((e, key) => {
@@ -130,7 +125,7 @@ function Question() {
 
             <div className='page-buttons-wrapper'>
                 <Link to={'/price'}><button onClick={handleClick} className='prev-button'>Previous</button></Link>
-                <Link to={'/loading'}><button onClick={handleResult} className='next-button'>Finish</button></Link>
+                <Link to={'/question'}><button onClick={handleResult} className='next-button'>Finish</button></Link>
 
             </div>
 

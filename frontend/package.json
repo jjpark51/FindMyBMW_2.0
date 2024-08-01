@@ -14,11 +14,13 @@
     "react": "^18.3.1",
     "react-apexcharts": "^1.4.1",
     "react-awesome-reveal": "^4.2.13",
+    "react-chartjs-2": "^5.2.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
+    "reactjs-popup": "^2.0.6",
     "sass": "^1.77.8",
     "web-vitals": "^2.1.4"
   },

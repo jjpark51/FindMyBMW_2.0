@@ -18,7 +18,7 @@ export const QList = [
         Qnum: 2,
         num: 'Q2.',
         name: 'What kind of fuel type do you prefer?',
-        answer: ['Gasoline', 'Diesel', 'Plug-in Hybrid', 'Electric', "Not Sure"]
+        answer: ['Gasoline', 'Diesel', 'Plug-in Hybrid', 'Electric']
         ,option: "Multi-choice"
     
     },

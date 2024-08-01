@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import { Fade } from "react-awesome-reveal";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import api from '../API/api';
 
 const units = ['₩'];
 
@@ -51,6 +52,30 @@ function Price() {
     setValue1(updatedValue);
   };
 
+  const handlePrice = async (e) => {
+    e.preventDefault();
+    
+    const token = localStorage.getItem('token');
+    if (!token) {
+      console.error('No token found. Please log in.');
+      // Redirect to login page or show login modal
+      return;
+    }
+  
+    const updatedPriceValue = [value1[0] * 1000, value1[1] * 1000];
+    try {
+      const response = await api.post('/price', updatedPriceValue);
+      console.log('Price range set successfully:', response.data);
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        console.error('Unauthorized. Token might be invalid or expired.');
+        // Handle token expiration, e.g., redirect to login
+      } else {
+        console.error('Failed to send price', error.response?.data || error.message);
+      }
+    } 
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  };
   return (
     <>
       <QNavigation />
@@ -66,6 +91,8 @@ function Price() {
             <li style={{ margin: '0 10px' }}>Result</li>
           </ul>
         </div>
+        <Link to={'/question'} style={{color: '#666', textDecoration: 'none'}}><button className='next-page' onClick={handlePrice}>Next</button></Link>
+
 
         <div style={{ width: '953.6533155441284', margin: 'auto' }}>
           <Box sx={{ 

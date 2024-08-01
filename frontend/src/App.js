@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Main from './components/Main';
 import Price from './components/Price';
 import Question from './components/Question';
+import Result from './components/Result';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/main" element={<Main />} />
         <Route path="/price" element={<Price />} />
         <Route path="/question" element={<Question />} />
+        <Route path="/result" element={<Result />} />
         {/* <Route path="/main" element={<Main />} /> */}
       </Routes>
     </React.Fragment>

@@ -27,6 +27,7 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
+          console.log('Attempting login with email:', email);
           const response = await api.post('/auth/login', { email, password });
           console.log('Login successful', response.data);
           localStorage.setItem('token', response.data.token);

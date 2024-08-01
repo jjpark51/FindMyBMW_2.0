@@ -1,0 +1,296 @@
+body {
+    height: 100%;
+        .result-body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/result_back.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 272vh;
+            
+            .line-divide {
+                color: white;
+                border-top: 2px solid whitesmoke;
+                width:93%;
+                margin: auto;
+            }
+            .wrapper{
+
+                .big-recommend {
+                    position: relative;
+                    left:37%;
+                    top: 20px;
+                    width:600px;
+                    font-size: 26pt;
+                    font-weight: bold;
+                    color: #F5F5F5;
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    z-index: 3;
+                
+                }
+                .big-recommend:hover {
+                  cursor: default;
+              
+              }
+                
+                .small-recommend {
+                    position: relative;
+                    left: 42%;
+                    top:35px;
+                    font-size: 14pt;
+                    width:600px;
+                    color: #F5F5F5;
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    z-index: 4;
+                }
+                .small-recommend:hover{
+                  cursor: default;
+                }
+
+                .reset-price {
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    position: relative;
+                    left: 78%;;
+                    top:10px;
+                    width:100px;
+                    height: 40px;
+                    background-color: transparent;
+                    color:whitesmoke;
+                    border: 1px solid white;
+
+
+                }
+                .reset-price:hover {
+                    cursor: pointer;
+                    color:black;
+                    background-color: whitesmoke;
+                    transition: 1000ms;
+                }
+
+                
+
+            }
+            
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            width: 15px;
+            left: 50%;
+            border: 0.1rem solid white;
+            height: 30px;
+            border-radius: 8px;
+            opacity: 0.8;
+            transition: opacity 0.5s; /* Add a transition for gradual fading */
+            z-index: 3;
+
+    
+            a {
+                position: relative;
+                top: 25px;
+                right:10px;
+                color: white;
+                opacity: 0.99;
+                
+            }
+            .elementor-button-text {
+                margin: auto;
+                position: relative;
+                top: 3px;
+                width: 3px;
+                min-height: 8px;
+                display: block;
+                background: currentColor;
+                border-radius: 5px;
+                -webkit-animation: 2.0s ease infinite wheel-up-down;
+                animation: 2.0s ease infinite wheel-up-down;
+                color:whitesmoke;
+                
+            }
+            selector .elementor-button-icon{
+                display: none;
+            }
+            selector a:focus{
+                outline: none;
+            }
+            @-webkit-keyframes wheel-up-down {
+              0% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                -webkit-transform: translateY(18px);
+                        transform: translateY(18px);
+                opacity: 0;
+              }
+            }
+            @keyframes wheel-up-down {
+              0% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                -webkit-transform: translateY(18px);
+                        transform: translateY(18px);
+                opacity: 0;
+              }
+            }
+        }
+        .scroll-indicator:hover {
+            cursor: pointer;
+        }
+}
+@media (max-width: 760px) {
+  body {
+    height: 100%;
+        .result-body {
+            margin: 0;
+            padding: 0;
+            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/result_back.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height: 600vh;
+            
+            .line-divide {
+                color: white;
+                border-top: 2px solid whitesmoke;
+                width:93%;
+                margin: auto;
+            }
+            .wrapper{
+
+                .big-recommend {
+                    position: relative;
+                    left:10%;
+                    top: 20px;
+                    width:fit-content;
+                    
+                    font-size: 18pt;
+                    font-weight: bold;
+                    color: #F5F5F5;
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    z-index: 3;
+                
+                }
+                
+                .small-recommend {
+                    position: relative;
+                    left: 20%;
+                    top:35px;
+                    font-size: 12pt;
+                    width:fit-content;
+                    color: #F5F5F5;
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    z-index: 4;
+                }
+
+                .reset-price {
+                    font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
+                    position: relative;
+                    left: 38%;;
+                    top: 60px;
+                    width:100px;
+                    height: 40px;
+                    background-color: transparent;
+                    color:whitesmoke;
+                    border: 1px solid white;
+                    font-size: 10pt;
+
+
+                }
+                .reset-price:hover {
+                    cursor: pointer;
+                    color:black;
+                    background-color: whitesmoke;
+                    transition: 1000ms;
+                }
+
+                
+
+            }
+            
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 20px;
+            width: 15px;
+            left: 50%;
+            border: 0.1rem solid white;
+            height: 30px;
+            border-radius: 8px;
+            opacity: 0.8;
+            transition: opacity 0.5s; /* Add a transition for gradual fading */
+            z-index: 3;
+
+    
+            a {
+                position: relative;
+                top: 25px;
+                right:10px;
+                color: white;
+                opacity: 0.99;
+                
+            }
+            .elementor-button-text {
+                margin: auto;
+                position: relative;
+                top: 3px;
+                width: 3px;
+                min-height: 8px;
+                display: block;
+                background: currentColor;
+                border-radius: 5px;
+                -webkit-animation: 2.0s ease infinite wheel-up-down;
+                animation: 2.0s ease infinite wheel-up-down;
+                color:whitesmoke;
+                
+            }
+            selector .elementor-button-icon{
+                display: none;
+            }
+            selector a:focus{
+                outline: none;
+            }
+            @-webkit-keyframes wheel-up-down {
+              0% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                -webkit-transform: translateY(18px);
+                        transform: translateY(18px);
+                opacity: 0;
+              }
+            }
+            @keyframes wheel-up-down {
+              0% {
+                opacity: 0;
+              }
+              30% {
+                opacity: 1;
+              }
+              100% {
+                -webkit-transform: translateY(18px);
+                        transform: translateY(18px);
+                opacity: 0;
+              }
+            }
+        }
+        .scroll-indicator:hover {
+            cursor: pointer;
+        }
+}
+
+}

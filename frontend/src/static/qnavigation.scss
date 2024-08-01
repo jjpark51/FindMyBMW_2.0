@@ -9,7 +9,6 @@
     background-color:transparent;
     display:flex;
     flex-direction: row;
-    padding-bottom: 16px;
 
 
     a {
@@ -35,17 +34,6 @@
             background-size: contain;
             cursor: pointer;
             margin-bottom:18px;
-        }
-        .qmini-icon {
-            width:96px;
-            height:72px;
-            background-image: url(https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/mini-logo.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            margin-left: 10px;
-            margin-bottom:18px;
-
         }
        
 
@@ -81,28 +69,8 @@
 
 
     }
-    .mini-conf-li {
-        height: 100%;
-        font-size: 1rem;
-        font-family: "BMWTypeNext Pro Regular",Arial,Helvetica,Roboto,sans-serif;
-        font-weight: 700;
-        line-height: 1.5rem;
-        height:100%;
-        // margin-left: 20px;
-        // margin-right:20px;
-        width: fit-content;
-        position: relative;
-        left: 72%;
-        padding-top:23px;
-
-
-
-    }
     
     .bmw-conf-li:hover{
-        border-bottom: 3px solid #1C69D4;
-    }
-    .mini-conf-li:hover{
         border-bottom: 3px solid #1C69D4;
     }
     .all-price-li:hover{
