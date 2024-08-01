@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import QNavigation from './QNavigation';
 import '../static/price.scss'
 import PriceChart from './PriceChart';
@@ -36,6 +36,7 @@ const minDistance = 40;
 
 function Price() {
   const [value1, setValue1] = useState([40, 260]);
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
   const handleChange1 = (event, newValue, activeThumb) => {
     if (!Array.isArray(newValue)) {
@@ -66,6 +67,8 @@ function Price() {
     try {
       const response = await api.post('/price', updatedPriceValue);
       console.log('Price range set successfully:', response.data);
+      navigate('/question'); // Navigate to the /question route
+
     } catch (error) {
       if (error.response && error.response.status === 401) {
         console.error('Unauthorized. Token might be invalid or expired.');
@@ -91,7 +94,7 @@ function Price() {
             <li style={{ margin: '0 10px' }}>Result</li>
           </ul>
         </div>
-        <Link to={'/question'} style={{color: '#666', textDecoration: 'none'}}><button className='next-page' onClick={handlePrice}>Next</button></Link>
+        <Link to={'/main'} style={{color: '#666', textDecoration: 'none'}}><button className='next-page' onClick={handlePrice}>Next</button></Link>
 
 
         <div style={{ width: '953.6533155441284', margin: 'auto' }}>

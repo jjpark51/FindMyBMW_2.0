@@ -77,23 +77,7 @@ export const BMWList = [
         keywords: ["High-energy density high-voltage battery","BMW Swarovski Crystal Headlights"	,"Rear seats theater screen"]
 
      }
-    //,{
-    //     name: "BMW 740i",
-    //     check: "BMW New 7 Series",
-    //     type: "Gasoline",
-    //     icon: '',
-    //     image: 'https://prod.cosy.bmw.cloud/bmwweb/cosySec?COSY-EU-100-2545xM4RIyFnbm9Mb3AgyyIJrjG0suyJRBODlsrjGpuaprQbhSIqppglBgbR9Dl384MlficYiGHqoQxYLW7%25f3tiJ0PCJirQbLDWcQW7%251uS3%25qoQh47wMvcYi9hGU3Mb3islBglUQTrcRScH7%25VMbnMd0zJyJGy5iuurQ%25r9SKFW8zWunbQqogqaGuvl3ilU%25tdcRScH48CMbnMdezkyJGy5QdFrQ%25r98eFW8JYHltW7%25ZnjTW8JuzM8nq0z6Fboy6oEd82',
-    //     popimage: 'https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/i7bigpop.jpg',
-    //     pop_sub: "The New BMW 7 Series",
-    //     link: "https://www.bmw.co.kr/ko/all-models/7-series/sedan/2022/bmw-7-series-sedan-highlights.html",
-    //     thenew: " ",
-    //     performance: 0.55,
-    //     price: 0.84,
-    //     space: 0.87,
-    //     fuel: 0.45,
-    //     popularity: 0.1,
-    //     won:
-    // },
+
     ,{
         name: "BMW i7 xDrive60",
         check: "BMW i7",
@@ -1343,21 +1327,6 @@ export const BMWList = [
             keywords: ['Fierce Power', 'The sportiness of a coupe & the M Competition design with black high gloss', 'Performance-Centric Displays']
 
         }
-,
-    {
-        name: "BMW 740d x드라이브",
-        check: "BMW 740d x드라이브",
-        type: "Diesel",
-        icon: '',
-        image: 'https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/740d x드라이브.webp',
-        popimage: 'https://d1jvv63fd9y16z.cloudfront.net/feature/jinsuk/image/740d x드라이브_pop.jpg',
-        link: "https://www.bmw.co.kr/ko/all-models/7-series/sedan/2022/bmw-7-series-sedan-highlights.html",
-        performance: 0.54 ,
-        price:0.54 ,
-        space:0.54 ,
-        fuel:0.54 ,
-        popularity: 0.54
-    }
 ,
     {
         name: "BMW M850i xDrive Coupe",

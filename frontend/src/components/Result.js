@@ -9,7 +9,7 @@ import { Slider } from '@mui/material';
 import Box from '@mui/material/Box';
 import NumChart from "react-apexcharts";
 import QNavigation from './QNavigation';
-
+import api from '../API/api';
 
 const marks = [
   {
@@ -104,41 +104,22 @@ function Result() {
               color:  '#9699a2'
             },
         }
-        //   tooltip: {
-        //     shared: true,
-        //     intersect: false,
-        //     y: {
-        //       formatter: function (y) {
-        //         if(typeof y !== "undefined") {
-        //           return  y.toFixed(0) + " points";
-        //         }
-        //         return y;
-        //       }
-        //     }
-        //   }
         }
         const [hasLoaded, setHasLoaded] = useState(false);
 
-        const handlePrice = (close) => {
+        const handlePrice = async (close) => {
           const updatedPriceValue = [(value1[0] * 1000), (value1[1] * 1000)];
 
-            const requestOptions = {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json',
-                'Accept': "application/json"
-            },
-              body: JSON.stringify(updatedPriceValue)
-          };
-            // window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-            fetch('http://localhost:5000/api/reset', requestOptions)
-            // fetch('/api/reset', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                // console.log(data);
-                window.location.reload();
+          try {
+            const response = await api.post('/reset', updatedPriceValue)
+            console.log("Price is successfully updated", response)
+            window.location.reload();
 
-            })
-            .catch(err => console.log(err))
+          }
+          catch (error){
+            console.log(error.resposne)
+          }
+
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
             setHasLoaded(!hasLoaded)
             close();
@@ -149,102 +130,32 @@ function Result() {
         }
     let counter = 0;
     const [value, setValue] = useState({min: 0, max: 100});
-    // console.log(hasLoaded)
-
-
 
     const [data, setData] = useState([])
-    // reloadPage();
-
-    // const [ firstLoad, setFirstLoad] = useState(true)
-
-    // if(firstLoad == true){
-        
-        // window.location.reload();
-    //     setFirstLoad(false);
-    // }
-
+    const [recommendFilter, setRecommendFilter] = useState([]);
 
     useEffect(() => {
-        if (!hasLoaded) {
-        fetch('http://localhost:5000/api/data')
-        // fetch('/api/data')
-        .then((response) => {
-            if(!response.ok) {
-                throw new Error('Network response was not ok')
-            }
-            return response.json()
-        })
-        .then((json) => {
-            setData(json);
-        })
-        .catch((error) => {
-            console.error('Error: ', error)
-        })
-    }
-    setHasLoaded(true);
-},[hasLoaded]);
-
-    // data.map((e, key) => (
-    //     console.log(e)
-    // ))
-
-    // const recommendFilter = BMWList.filter(e => {
-    //     if(e.name === data[0]){
-    //         return e
-    //     }
-    //     else if(e.name === data[1]){
-    //         return e
-    //     }
-    //     else if(e.name === data[2]){
-    //         return e
-    //     }
-    // })
-
-    const recommendFilter = []
-
-    // for(let i = 0; i < 3 ; i++){
-    //   console.log(data[i])
-    // }
-
-    for(let i = 0 ; i < 20; i++) {
-      for(let j = 0; j < BMWList.length; j++){
-        if(data[i] === BMWList[j]?.name){
-          // console.log(BMWList[j].name)
-          // console.log("same")
-          recommendFilter.push(BMWList[j])
-          
-          }
+      if (!hasLoaded) {
+        api.get('/data')
+          .then((response) => {
+            setData(response.data);
+            console.log(response);
+            setHasLoaded(true);
+          })
+          .catch((error) => {
+            console.error('Error: ', error);
+          });
       }
-      // console.log(recommendFilter[i])
-    }
+    }, [hasLoaded]);
 
-    const DuplicateFilter = []
+    useEffect(() => {
+      if (data.length > 0) {
 
-    for(let i  = 0 ; i  < recommendFilter.length; i++) {
-      if(i == 0){
-         DuplicateFilter.push(recommendFilter[i])
+        setRecommendFilter(data);
+        console.log(recommendFilter)
+      
       }
-      else {
-        if(DuplicateFilter.length > 0){
-          let j = 0;
-          for(j = 0 ; j < i; j++){
-            if(recommendFilter[i]?.check == DuplicateFilter[j]?.check){
-              break;
-            }
-          }
-          if(j == i){
-             DuplicateFilter.push(recommendFilter[i])
-          }
-        }
-      }
-
-      if(DuplicateFilter.length === 9){
-        break;
-      }
-    }
-
-
+    }, [data]);
 
     const scrollDown = () => {
       window.scrollTo({top: 750, left: 0, behavior: 'smooth'});
@@ -328,39 +239,37 @@ function Result() {
                                     {/* <Fade duration={3000}> */}
 
                         <div className='card-box'>{
-                        DuplicateFilter.map((e, key) => {
+                          recommendFilter.map((e, key) => {
+                            console.log(e.radarWon)
 
                             counter = counter + 1;
                             return ( <Card 
                                 counter={counter}
-                                check={e.check}
+                                check={e.popname}
                                 key={key}
-                                name={e.name}
+                                name={e.model}
                                 image={e.image}
                                 pop={e.popimage}
-                                type={e.type}
+                                type={e.radarType}
                                 icon={e.icon}
-                                pop_sub={e.pop_sub}
+                                // pop_sub={e.popsub}
                                 link={e.link}
-                                thenew={e.thenew}
-                                performance={e.performance}
-                                price={e.price}
-                                space={e.space}
-                                fuel={e.fuel}
-                                popularity={e.popularity}
-                                won={e.won}
-                                weight={e.weight}
-                                power={e.power}
-                                fuele={e.fuele}
-                                costkm={e.costkm}
+                                performance={e.radarPerformance}
+                                price={e.radarPrice}
+                                space={e.radarSpace}
+                                fuel={e.radarFuel}
+                                popularity={e.radarPopularity}
+                                won={e.radarWon}
+                                weight={e.radarWeight}
+                                power={e.radarPower}
+                                fuele={e.radarFuele}
+                                costkm={e.radarCostkm}
                                 lwh={e.lwh}
-                                legtrunk={e.legtrunk}
+                                legtrunk={e.radarLegtrunk}
                                 color={radarColor[counter - 1]}
-                                keywords={e.keywords} />)
+                                keywords={e.radarKeywords} />)
                         })}
                         </div>
-                        {/* </Fade>  */}
-
                     </div>
 
                     <div className='scroll-indicator' onClick={scrollDown}>

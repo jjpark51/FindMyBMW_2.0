@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import Navigation from './Navigation';
+import { useHistory } from 'react-router-dom';
+
 import '../static/main.scss'
 import { Fade } from 'react-awesome-reveal';
 

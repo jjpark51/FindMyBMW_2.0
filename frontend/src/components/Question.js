@@ -5,12 +5,13 @@ import {HTML5Backend} from 'react-dnd-html5-backend'
 import { QList } from '../assets/question'
 import '../static/scroll.scss'
 import ScrollCard from './ScrollCard'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Fade } from 'react-awesome-reveal'
 import DragCard from './DragCard'
 import api from '../API/api'
 
 function Question() {
+    const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
     const ResponseList =  [[0,0,0,0,0],[0,0,0,0], [0,0,0,0],[0,0,0,0,0],[0,0,0,0],[0,0,0,0,0,0,0]]
     const [recommendData, setRecommendData] = useState([])
@@ -72,6 +73,7 @@ function Question() {
           console.log('Token being used:', token);
           const response = await api.post('/process', ResponseList);
           console.log("Request was sent successfully", response.data);
+          navigate('/result'); // Navigate to the /question route
         } catch (error) {
           console.log("Request failed!", error.response?.data || error.message);
           console.log("Full error object:", error);
@@ -125,7 +127,7 @@ function Question() {
 
             <div className='page-buttons-wrapper'>
                 <Link to={'/price'}><button onClick={handleClick} className='prev-button'>Previous</button></Link>
-                <Link to={'/question'}><button onClick={handleResult} className='next-button'>Finish</button></Link>
+                <Link to={'/result'}><button onClick={handleResult} className='next-button'>Finish</button></Link>
 
             </div>
 

@@ -2,13 +2,16 @@ import React, {useState} from 'react'
 import '../static/card.scss'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import PopupBox from './PopupBox'
+import PopupBox from './PopupBox';
 import RadarChart from './RadarChart';
 import { Radar } from 'react-chartjs-2';
 
 
-function Card({keywords, name, won, check,image, icon, pop, type, pop_sub, link, counter, thenew, performance, price, space, fuel, popularity, color, weight, power, fuele, costkm, lwh, legtrunk}) {
+function Card({keywords, name, won, check,image, icon, pop, type, link, counter, performance, price, space, fuel, popularity, color, weight, power, fuele, costkm, lwh, legtrunk}) {
     if(counter == 1){
+        console.log(keywords)
+
+        console.log(won)
         return(
             
             <div className='card-wrapper' >
@@ -26,7 +29,7 @@ function Card({keywords, name, won, check,image, icon, pop, type, pop_sub, link,
                     <button className='buy-button'><a href={link} target='__blank' style={{color: 'whitesmoke', textDecoration: 'none'}}>Model Link</a></button>
                    
                     <Popup trigger={  <button className='info-button'>Details</button>} modal contentStyle={{ width: '1150px' }}>
-                        <PopupBox icon={icon} color={color} name={name} image={image} pop={pop} pop_sub={pop_sub} thenew={thenew} performance={performance} price={price} fuel={fuel} popularity={popularity} space={space} keywords={keywords} weight={weight} power={power} fuele={fuele} costkm={costkm} lwh={lwh} legtrunk={legtrunk} />
+                        <PopupBox icon={icon} color={color} name={name} image={image} pop={pop} performance={performance} price={price} fuel={fuel} popularity={popularity} space={space} keywords={keywords} weight={weight} power={power} fuele={fuele} costkm={costkm} lwh={lwh} legtrunk={legtrunk} />
                     </Popup>
 
                 </div>
@@ -62,7 +65,7 @@ function Card({keywords, name, won, check,image, icon, pop, type, pop_sub, link,
                     <button className='buy-button'><a href={link} target='__blank' style={{color: 'whitesmoke', textDecoration: 'none'}}>Model Link</a></button>
                    
                     <Popup trigger={  <button className='info-button'>Details</button>} modal contentStyle={{ width: '1050px' }}>
-                        <PopupBox icon={icon} color={color} name={name} image={image} pop={pop} pop_sub={pop_sub} thenew={thenew} performance={performance} price={price} space={space} fuel={fuel} popularity={popularity} keywords={keywords} weight={weight} power={power} fuele={fuele} costkm={costkm} lwh={lwh} legtrunk={legtrunk} />
+                        <PopupBox icon={icon} color={color} name={name} image={image} pop={pop} performance={performance} price={price} space={space} fuel={fuel} popularity={popularity} keywords={keywords} weight={weight} power={power} fuele={fuele} costkm={costkm} lwh={lwh} legtrunk={legtrunk} />
                     </Popup>
 
                 </div>

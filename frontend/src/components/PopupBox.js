@@ -47,11 +47,11 @@ function PopupBox({keywords, name, icon, image, pop, pop_sub, thenew, performanc
             <div className='keywords' style={{height: 'fit-content',color: 'black', marginRight: '50px', paddingTop: '30px', backgroundColor: 'transparent', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", textAlign: 'center'}}><a style={{textDecoration: 'underline', fontSize: '12pt'}}>KEYWORDS</a>
                 <div className="keyword-grid" style={{display: 'grid',  gridTemplateColumns: '1fr 8fr', position: 'relative', top: '40px', lineHeight: '50px', rowGap: '20px', columnGap:'10px'}}>
                     <div style={{backgroundColor: 'blue', borderRadius: '8', backgroundColor: 'white' ,fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif",}}><a>1.</a></div>
-                    <div style={{backgroundColor: 'green', borderRadius: '8', backgroundColor: '#EBEBEB', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", fontSize: '11pt'}}>{keywords[0]}</div>
+                    {/* <div style={{backgroundColor: 'green', borderRadius: '8', backgroundColor: '#EBEBEB', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", fontSize: '11pt'}}>{keywords[0]}</div>
                     <div style={{backgroundColor: 'blue', borderRadius: '8', backgroundColor: 'white',fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif",}}><a>2.</a></div>
                     <div style={{backgroundColor: 'green', borderRadius: '8', backgroundColor: '#EBEBEB', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", fontSize: '11pt'}}>{keywords[1]}</div>
                     <div style={{backgroundColor: 'blue',  borderRadius: '8', backgroundColor: 'white', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif",}}><a>3.</a></div>
-                    <div style={{backgroundColor: 'green', borderRadius: '8', backgroundColor: '#EBEBEB', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", fontSize: '11pt'}}>{keywords[2]}</div>
+                    <div style={{backgroundColor: 'green', borderRadius: '8', backgroundColor: '#EBEBEB', fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", fontSize: '11pt'}}>{keywords[2]}</div> */}
                 </div>
             </div>
             <div className="spec" style={{height: 'fit-content', color:'black', width: '100%', height: 'fit-content', paddingTop: '30px', textAlign: 'center',  fontFamily: "BMWTypeNext Pro Regular,Arial,Helvetica,Roboto,sans-serif", rowGap: '20px'}}><a style={{textDecoration: 'underline', fontSize: '12pt'}}>SPEC INFO</a>

@@ -33,6 +33,21 @@
         z-index: 0;
     }
 
+    .next-page {
+        position: relative;
+        bottom: 40px;
+        left: 140px;
+        height: 5vh;
+        width: 125px;
+        opacity: 0.9;
+        color: black;
+        font-size: 20pt;
+        border: 2px solid black;
+        text-align: center;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
     .price-flex {
         display: flex;
         justify-content: center;
