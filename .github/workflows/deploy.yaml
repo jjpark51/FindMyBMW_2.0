@@ -36,8 +36,8 @@ jobs:
           SERVER_DIR: /home/jjpark/Projects
           SSHPASS: ${{ secrets.SERVER_PASSWORD }}
         run: |
-          echo "Attempting to connect to server..."
-          sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+          # echo "Attempting to connect to server..."
+          # sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
           echo "Copying files to the server..."
           sshpass -e scp -o StrictHostKeyChecking=no -r ./* $SERVER_USER@$SERVER_HOST:$SERVER_DIR
 
