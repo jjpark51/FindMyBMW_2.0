@@ -43,14 +43,6 @@ jobs:
     - name: Install sshpass
       run: sudo apt-get install sshpass
 
-   
-    - name: Debug connection
-      run: |
-        echo "Checking DNS resolution..."
-        nslookup shan8017.iptime.org
-        echo "Checking connection to server..."
-        nc -zv shan8017.iptime.org 2222
-
     - name: Deploy to server
       env:
         SERVER_HOST: shan8017.iptime.org
