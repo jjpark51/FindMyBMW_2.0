@@ -8,8 +8,6 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
-
-// Add a request interceptor
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -22,5 +20,6 @@ api.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
 
 export default api;

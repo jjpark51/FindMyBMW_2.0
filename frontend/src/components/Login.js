@@ -27,8 +27,8 @@ function Login() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-          console.log('Attempting login with email:', email);
-          const response = await api.post('/auth/login', { email, password });
+          console.log('Attempting login with username:', username);
+          const response = await api.post('/auth/login', { username, password });
           console.log('Login successful', response.data);
           localStorage.setItem('token', response.data.token);
           navigate('/main')
@@ -60,8 +60,8 @@ function Login() {
             <div className="login">
                 <form onSubmit={handleLogin}>
                     <label htmlFor="chk" aria-hidden="true">Login</label>
-                    <input type="email" name="email" placeholder="Email" required="" 
-                        value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" name="txt" placeholder="User name" required="" 
+                        value={username} onChange={(e) => setUsername(e.target.value)} />
                     <input type="password" name="pswd" placeholder="Password" required="" 
                         value={password} onChange={(e) => setPassword(e.target.value)} />
                     <button>Login</button>
