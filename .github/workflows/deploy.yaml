@@ -31,7 +31,7 @@ jobs:
 
       - name: Debug SSH Connection
         run: |
-          echo "Connecting to server ${HOST} as user ${USERNAME}..."
+          echo "Connecting to server shan8017.iptime.org as user jjpark57..."
           sshpass -p "501stclan?" ssh -vvv -o StrictHostKeyChecking=no jjpark@shan8017.iptime.org "whoami"
         # env:
         #   HOST: ${{ secrets.HOST }}
