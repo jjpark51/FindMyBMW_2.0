@@ -29,30 +29,11 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
 
-      # - name: Deploy to server
-      #   env:
-      #     SERVER_HOST: shan8017.iptime.org
-      #     SERVER_USER: jjpark
-      #     SERVER_DIR: /home/jjpark/Projects
-      #     SSHPASS: ${{ secrets.SERVER_PASSWORD }}
-      #   run: |
-      #     # echo "Attempting to connect to server..."
-      #     # sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
-      #     echo "Copying files to the server..."
-      #     sshpass -e scp -o StrictHostKeyChecking=no -r ./* $SERVER_USER@$SERVER_HOST:$SERVER_DIR
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          host: shan8017.iptime.org
+          username: jjpark
+          password: 501stclan?
           script: whoami
 
-      # - name: Verify deployment
-      #   env:
-      #     SERVER_HOST: shan8017.iptime.org
-      #     SERVER_USER: jjpark
-      #     SSHPASS: ${{ secrets.SERVER_PASSWORD }}
-      #   run: |
-      #     echo "Verifying deployment..."
-      #     sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "ls -l $SERVER_DIR"
