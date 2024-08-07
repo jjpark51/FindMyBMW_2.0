@@ -1,4 +1,4 @@
-# GitHub Actions Docs : https://docs.github.com/en/actions
+# GitHub Actions Docs: https://docs.github.com/en/actions
 
 on:
   push:
@@ -26,16 +26,25 @@ jobs:
           echo "여기다가 빌드하기 추가"
           # Add your build steps here
 
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
+      - name: Install SSH Client
+        run: sudo apt-get install -y openssh-client
 
-      - name: multiple command
+      - name: Add SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan shan8017.iptime.org >> ~/.ssh/known_hosts
+
+      - name: Debug SSH Connection
+        run: ssh -vvv -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no jjpark@shan8017.iptime.org "whoami"
+
+      - name: Multiple commands
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          password: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           script: |
             whoami
