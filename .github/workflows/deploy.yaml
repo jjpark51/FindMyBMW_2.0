@@ -32,16 +32,16 @@ jobs:
       - name: Debug SSH Connection
         run: |
           echo "Connecting to server ${HOST} as user ${USERNAME}..."
-          sshpass -p "${{ secrets.PASSWORD }}" ssh -vvv -o StrictHostKeyChecking=no ${USERNAME}@${HOST} "whoami"
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
+          sshpass -p "501stclan?" ssh -vvv -o StrictHostKeyChecking=no jjpark@$shan8017.iptime.org "whoami"
+        # env:
+        #   HOST: ${{ secrets.HOST }}
+        #   USERNAME: ${{ secrets.USERNAME }}
 
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: shan8017.iptime.org
-          username: jjpark
-          password: 501stclan?
-          script: whoami
+      # - name: executing remote ssh commands using password
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: shan8017.iptime.org
+      #     username: jjpark
+      #     password: 501stclan?
+      #     script: whoami
 
