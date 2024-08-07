@@ -32,5 +32,5 @@ jobs:
           host: shan8017.iptime.org
           username: jjpark
           password: 501stclan?
-          port: 22
+          port: 8022
           script: whoami
