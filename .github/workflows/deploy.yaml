@@ -31,17 +31,7 @@ jobs:
 
       - name: Debug SSH Connection
         run: |
-          echo "Connecting to server shan8017.iptime.org as user jjpark57..."
+          echo "Connecting to server shan8017.iptime.org as user jjpark57 with ps 501stclan?..."
           sshpass -p 501stclan? ssh -vvv -o StrictHostKeyChecking=no jjpark@shan8017.iptime.org "whoami"
-        # env:
-        #   HOST: ${{ secrets.HOST }}
-        #   USERNAME: ${{ secrets.USERNAME }}
-
-      # - name: executing remote ssh commands using password
-      #   uses: appleboy/ssh-action@v1.0.3
-      #   with:
-      #     host: shan8017.iptime.org
-      #     username: jjpark
-      #     password: 501stclan?
-      #     script: whoami
-
+        env:
+          PASSWORD: 501stclan?
