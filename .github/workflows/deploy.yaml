@@ -45,34 +45,34 @@ jobs:
       run: sudo apt-get install sshpass
 
    
-- name: Debug connection
-  run: |
-    echo "Checking DNS resolution..."
-    nslookup shan8017.iptime.org
-    echo "Checking connection to server..."
-    nc -zv shan8017.iptime.org 22
+    - name: Debug connection
+      run: |
+        echo "Checking DNS resolution..."
+        nslookup shan8017.iptime.org
+        echo "Checking connection to server..."
+        nc -zv shan8017.iptime.org 22
 
-- name: Deploy to server
-  env:
-    SERVER_HOST: shan8017.iptime.org
-    SERVER_USER: jjpark
-    SERVER_DIR: /home/jjpark/Projects
-    SSHPASS: ${{ secrets.SERVER_PASSWORD }}
-  run: |
-    echo "Attempting to connect to server..."
-    sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
-    
-    if [ $? -eq 0 ]; then
-      echo "SSH connection successful, proceeding with deployment"
-      # Deploy to server
-      sshpass -e rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ $SERVER_USER@$SERVER_HOST:$SERVER_DIR/
-      
-      sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
-        cd $SERVER_DIR
-        # Add any additional commands needed for deployment
-        echo "Deployment completed"
-      EOF
-    else
-      echo "Failed to establish SSH connection"
-      exit 1
-    fi
+    - name: Deploy to server
+      env:
+        SERVER_HOST: shan8017.iptime.org
+        SERVER_USER: jjpark
+        SERVER_DIR: /home/jjpark/Projects
+        SSHPASS: ${{ secrets.SERVER_PASSWORD }}
+      run: |
+        echo "Attempting to connect to server..."
+        sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+        
+        if [ $? -eq 0 ]; then
+          echo "SSH connection successful, proceeding with deployment"
+          # Deploy to server
+          sshpass -e rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ $SERVER_USER@$SERVER_HOST:$SERVER_DIR/
+          
+          sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
+            cd $SERVER_DIR
+            # Add any additional commands needed for deployment
+            echo "Deployment completed"
+          EOF
+        else
+          echo "Failed to establish SSH connection"
+          exit 1
+        fi
