@@ -30,8 +30,9 @@ jobs:
         run: sudo apt-get install -y sshpass
 
       - name: Debug SSH Connection
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
         run: |
           echo "Connecting to server shan8017.iptime.org as user jjpark57 with ps 501stclan?..."
-          sshpass -p 501stclan? ssh -vvv -o StrictHostKeyChecking=no jjpark@shan8017.iptime.org "whoami"
-        env:
-          PASSWORD: 501stclan?
