@@ -1,26 +1,16 @@
-name: Deploy test to ubuntu server
-
- 
-
 # GitHub Actions Docs : https://docs.github.com/en/actions
-
- 
 
 on:
   push:
-    branches :
+    branches:
       - main
 
 permissions:
-      id-token: write
-      contents: read    # This is required for actions/checkout
-
- 
+  id-token: write
+  contents: read # This is required for actions/checkout
 
 env:
-  CURRENT_BRANCH : ${{ github.ref_name }}
-
- 
+  CURRENT_BRANCH: ${{ github.ref_name }}
 
 jobs:
   CI:
@@ -28,42 +18,34 @@ jobs:
     environment: ${{ github.ref_name }}
     runs-on: ubuntu-latest
     steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
 
- # v3 uses node.js 16 which might be deprecated by Github
-    - name: Git clone the repository
-      uses: actions/checkout@v4 
-      with:
-        node-version: 
+      - name: Build code
+        run: |
+          echo "여기다가 빌드하기 추가"
+          # Add your build steps here
 
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
 
-    - name: Build code
-      run: |
-            echo "여기다가 빌드하기 추가"
+      - name: Deploy to server
+        env:
+          SERVER_HOST: shan8017.iptime.org
+          SERVER_USER: jjpark
+          SERVER_DIR: /home/jjpark/Projects
+          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          echo "Attempting to connect to server..."
+          sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
+          echo "Copying files to the server..."
+          sshpass -e scp -o StrictHostKeyChecking=no -r ./* $SERVER_USER@$SERVER_HOST:$SERVER_DIR
 
-    - name: Install sshpass
-      run: sudo apt-get install sshpass
-
-    - name: Deploy to server
-      env:
-        SERVER_HOST: shan8017.iptime.org
-        SERVER_USER: jjpark
-        SERVER_DIR: /home/jjpark/Projects
-        SSHPASS: ${{ secrets.SERVER_PASSWORD }}
-      run: |
-        echo "Attempting to connect to server..."
-        sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "echo 'SSH connection successful'"
-        
-        if [ $? -eq 0 ]; then
-          echo "SSH connection successful, proceeding with deployment"
-          # Deploy to server
-          sshpass -e rsync -avz -e "ssh -o StrictHostKeyChecking=no" --delete ./ $SERVER_USER@$SERVER_HOST:$SERVER_DIR/
-          
-          sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST << EOF
-            cd $SERVER_DIR
-            # Add any additional commands needed for deployment
-            echo "Deployment completed"
-          EOF
-        else
-          echo "Failed to establish SSH connection"
-          exit 1
-        fi
+      - name: Verify deployment
+        env:
+          SERVER_HOST: shan8017.iptime.org
+          SERVER_USER: jjpark
+          SSHPASS: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          echo "Verifying deployment..."
+          sshpass -e ssh -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_HOST "ls -l $SERVER_DIR"
