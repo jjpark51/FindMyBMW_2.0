@@ -32,7 +32,7 @@ jobs:
       - name: Debug SSH Connection
         run: |
           echo "Connecting to server ${HOST} as user ${USERNAME}..."
-          sshpass -p "501stclan?" ssh -vvv -o StrictHostKeyChecking=no jjpark@$shan8017.iptime.org "whoami"
+          sshpass -p "501stclan?" ssh -vvv -o StrictHostKeyChecking=no jjpark@shan8017.iptime.org "whoami"
         # env:
         #   HOST: ${{ secrets.HOST }}
         #   USERNAME: ${{ secrets.USERNAME }}
